@@ -1,0 +1,12 @@
+This was created with distutils by Igor Zlatkovic. His website is: http://www.zlatkovic.com/libxml.en.html
+
+The executable contains:
+* libxml 2.7.7 
+* libxslt 1.1.25 
+
+It requires:
+* Python 2.7
+
+Windows ports maintained by Stéphane Bidoul: http://users.skynet.be/sbi/libxml-python/
+
+The TrackerCat tc.py tool and GitHub project is not officially affiliated by the developers of libxml2, libxslt or any of the sources above. libxml2 and libxslt are under the MIT License and have been provided in this repository for ease of installing. Although full attribution with links isn't required under the MIT License, we 
