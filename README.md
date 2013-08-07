@@ -19,7 +19,7 @@ You can find the Active Logs by selecting "Places," "Temporary Places," "Importe
  
 By default ALL ACTIVE LOGS are selected. These contain trackpoint data. No waypoint data is extracted (while they are rich with actual addresses, they lack timestamps and are of no use to us). You will also need to have the transform.xslt in the TrackerCat folder.
 
-**Trackpoint Timestamps to CSV
+**Trackpoint Timestamps to CSV**
 > python tc.py -csv [gpx file]
 
 This will export trackpoint times and coordinates from a GPX file. This can be quite cumbersome and, usually, contains well over 9,000 timestamps (depending on the GPX file and GPS device). Among many other things, trackpoint times can give you a deeper understanding as to the timeframe of data stored on the GPS device. 
@@ -27,7 +27,7 @@ This will export trackpoint times and coordinates from a GPX file. This can be q
 When run with -csv - after extracting trackpoint times - it'll also ask whether or not you want the parent Active Log info printed to their own CSV.
 
 
-**Help & Feature Check
+**Help & Feature Check**
 > python tc.py -h 
 
 ### XSLT GPX-to-KML Conversion 
