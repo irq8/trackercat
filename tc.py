@@ -56,16 +56,28 @@ def gpxlist(ext, dirname, names):
         if name.lower().endswith('.gpx'):
             print(os.path.join(dirname, name))
 
+def ignore_list(path, files):
+    ret = []
+    for fname in files:
+        fullFileName = os.path.normpath(path) + os.sep + fname
+        if not os.path.isdir(fullFileName) \
+            and not fname.endswith('gpx'):
+            ret.append(fname)
+    return ret
+
 def gpxextract(src,dest):
-		print '[' + strftime('%Y-%m-%d %H:%M:%S', gmtime()) + ' UTC] Executing Extraction (may take a minute)...'
-		dest_dir = os.path.dirname(dest)
-		try:
-			os.makedirs(dest_dir)
-		except os.error as e:
-			pass 
-			shutil.copytree(src,dest)
-		print '[' + strftime('%Y-%m-%d %H:%M:%S', gmtime()) + ' UTC] Successfully Extracted: '
-		os.path.walk(path, gpxlist, '.gpx')
+    print '[' + strftime('%Y-%m-%d %H:%M:%S', gmtime()) + ' UTC] Executing Extraction (may take a minute)...'
+    shutil.copytree(src,dest,ignore=ignore_list)
+    print '[' + strftime('%Y-%m-%d %H:%M:%S', gmtime()) + ' UTC] Successfully Extracted: '
+    os.path.walk(path, gpxlist, '.gpx')
+    for root, dirs, files in os.walk(dest):
+        for dn in dirs:
+            pth = os.path.join(root, dn)
+            try:
+                os.rmdir(pth)
+                os.rmdir(root)
+            except OSError:
+                pass
 
 def gpxtrkparser():
     dom = parse(csvinputfile)
@@ -97,6 +109,7 @@ if args.input and args.output:
 if args.extractpath:
 	path = args.extractpath
 	gpxextract(extractpath, 'Exports')
+
 if args.csv:
     print '[' + strftime('%Y-%m-%d %H:%M:%S', gmtime()) + ' UTC] Extracting trackpoint temporal data to CSV...'
     with open('trackpoints.csv', 'wb') as csvfile:

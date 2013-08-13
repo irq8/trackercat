@@ -10,7 +10,7 @@ The project's tools are 100% open source and freely available.
 
 > python tc.py -e [Mounted Image or Local Path]
 
-A folder named 'Exports' will contain all GPXs in the specified path as well as sub-directories. This includes any Archive folders containing historic trip data.
+A folder named 'Exports' will contain all GPXs in the specified path as well as sub-directories. This includes any Archive folders containing historic trip data. 
 
 **XSLT GPX-to-KML Conversion**
 > python tc.py -i [gpx file] -o [output file]
@@ -152,6 +152,8 @@ This GitHub was created to facilitate the growth of tc.py, aid in the analysis o
 
 More information on manually parsing and understanding GPX files can be read on my blog, on [my GPS research page](https://forksec.wordpress.com/research-gps-device-analysis/). While far from authoritative, it'll also give some more information on what can be found in slack space.
 
+**Remaining Folders After Export** A lot of time has gone into the GPX export feature in TrackerCat. Unfortunately TC doesn't always cleanup after itself and delete empty directories remaining after a successful extraction. Further improvements will be made in future commits. 
+
 To manually examine GPX files, I suggest using a tool like AccessData's FTK Imager or XML Spy. 
 
 Please see the section entitled _"Future Considerations"_ for another possible uses for trackpoint timestamps.
@@ -187,7 +189,6 @@ Feel free to hit the "Play Tour" button at the bottom the Places panel (looks li
 
 Additionally, you can right click on the Tracklog Active Log entries and select "Show Elevation Profile" to see the elevation distribution for that entry. The purpose of that is to help you understand the terrain. You may right click and select sections on the elevation panel to highlight that portion of the trip in the viewer. I have preserved elevation data in the KML transformation. Terrain data is also stored on the keyhole server which Google Earth connects to when you first open the program (the default keyhole server is kh.google.com).
 
-
 ### Choice of Project License
 
  I believe in free software and would like the chance for skilled programmers to contribute to this project. That’s the reason I’ve selected a permissive Open Source license instead of a copyleft license. Adopting a copyleft license would restrict project developers in defining that all derivative works carry the same license. Instead, I’d like to ensure that future modifications are unhindered by legal regulations. 
@@ -198,6 +199,11 @@ _Closed source modifications and enterprise/government use of any kind is also p
 
 Research or documentation found outside this project's repository is not licensed under the project's primary license. 
 
+### Contributors and Support
+
+Special thanks to the entire staff and user-base of [Stack Overflow](http://www.stackoverflow.com) and [Dream in Code](http://www.dreamincode.net/) for your constant support. 
+
+Also a big thanks to ethompso for aiding me in fixing the tool's GPX extraction capabilities.
 
 ### Contact Project Lead
 
