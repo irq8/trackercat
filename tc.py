@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 '''
-This is a fast, leightweight GPS utility designed to analyze GPX files. 
+This is a fast, lightweight GPS utility designed to analyze GPX files. 
 Supplemental Research: https://forksec.wordpress.com/research-gps-device-analysis/
 '''
 
