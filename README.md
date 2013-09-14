@@ -62,13 +62,13 @@ Many hardware and software solutions exist for extracting trip data from GPS dev
 
 A working knowledge of GPX data structures and their timestamps is critical to your success with this tool. Not all GPS devices are the same. A proper analysis should never end by executing a few lines of code and showing your boss a cool fly-over of GPS data in Google Earth. 
 
-For some supplementary research on GPS device forensics with GPX files, feel free to read my research notes: [https://forksec.wordpress.com/research-gps-device-analysis](https://forksec.wordpress.com/research-gps-device-analysis)
+For some supplementary research on GPS device forensics with GPX files, feel free to read my research notes: [http://forensicsblog.org/research-gps-device-analysis](http://forensicsblog.org/research-gps-device-analysis)
 
 ### Aiding Analysts by Narrowing the Scope
 
 Mapping aside, TrackerCat can help you determine which GPX files contain Active Logs that fall into case's timeline. Instead of scrolling through thousands of lines of XML with syntax highlighting enabled, this approach allows you to convert a GPS data file into a mappable file. Unlike other tools that do the same, TC also has advanced options which allow you to dump individual trackpoint timestamps to CSV. 
 
-![KML in Google Earth](http://forksec.files.wordpress.com/2013/07/activelogs-kml.jpg?w=900)
+![KML in Google Earth](http://forensicsblog.org/2013/07/activelogs-kml.jpg?w=900)
 
 TC can be useful during active investigations to help an analyst determine whether or not a seized GPS device holds the critical information they need. It can also be used to corroborate known facts of a case through timeline analysis. Regardless of how the tool is used, it can provide great insight into a GPS devices that use GPX files.
 
@@ -79,13 +79,13 @@ Check out the <a href="https://github.com/irq8/trackercat/issues/milestones?with
 
 ### TrackerCat Project & Repository
 
-Feel free to use this GitHub to contribute to TrackerCat and expand its functionality. This includes creating other standalone tools that can be used to analyze other forms of GPS data. I’m not a professional programmer. The goal of the project is to work with fellow analysts and programmers to implement better open source GPS tools.
+Feel free to use this GitHub to contribute to TrackerCat and expand its functionality. This includes creating other standalone tools that can be used to analyze other forms of GPS data. Iâ€™m not a professional programmer. The goal of the project is to work with fellow analysts and programmers to implement better open source GPS tools.
  
 _TrackerCat is primarily designed for Windows using Python 2.7._ The tools found within the repository will likely run on any operating system with some tweaking. 
 
 Please note that this project is in no way affiliated with Google, libxml2, libxslt, the Python Software Foundation, the Apache Software Foundation, the GNOME Project or any other group, organization or company that isn't specifically mentioned in this document.
 
-If you’d like to show your support for the project, let me know and I’ll add your name to a Contributors section. 
+If youâ€™d like to show your support for the project, let me know and Iâ€™ll add your name to a Contributors section. 
 
 ### Python Libraries
 
@@ -98,8 +98,8 @@ I've redistributed the library's source in this repository with full attribution
 ### System Requirements
 
 **Windows** _(Python 2.7+)_:
-* The best way to install libxml2/libxslt Windows is by using the libxml and libxslt bindings (exe) from Stéphane Bidoul's site: http://users.skynet.be/sbi/libxml-python/  (an executable should be found within this repository)
-* Have these documents in the same place: tc.py, transform.xslt as well as complete GPX (example, Current.gpx or a device’s archived GPX files).
+* The best way to install libxml2/libxslt Windows is by using the libxml and libxslt bindings (exe) from StÃ©phane Bidoul's site: http://users.skynet.be/sbi/libxml-python/  (an executable should be found within this repository)
+* Have these documents in the same place: tc.py, transform.xslt as well as complete GPX (example, Current.gpx or a deviceâ€™s archived GPX files).
 * A sufficient amount of memory necessary to run the trackpoint-to-CSV feature (this should not pose a significant problem).
 
 **Linux** _(Python 2.6-dev)_:
@@ -138,11 +138,11 @@ To troubleshoot Windows issues:
 
 ### TrackerCat and Project
 
-The TrackerCat Project as a whole can include _attempts to modify or add features to the official TrackerCat tool itself_. As a secondary goal, _you can use the repository to aid in developing other tools for GPS device analysis_. These can be features you’d like to see added to tc.py or just supplementary tools.
+The TrackerCat Project as a whole can include _attempts to modify or add features to the official TrackerCat tool itself_. As a secondary goal, _you can use the repository to aid in developing other tools for GPS device analysis_. These can be features youâ€™d like to see added to tc.py or just supplementary tools.
 
 Obviously _any attempt to integrate a feature into tc.py must be written in Python_. I prefer all future modifications to tc.py stay Python 2.7-compliant. While 3.0 offers a number of interesting improvements, programs coded in 2.7 are more widely adopted and thus used for TrackerCat.
 
-Supplementary tools – that aren’t designed to be integrated into tc.py - can be in _any _language. My particular involvement is not necessary: I trust the GH community. I know that Perl is huge in the DFIR community and is welcome here! Any contributions should be as cross-platform capable as possible.
+Supplementary tools â€“ that arenâ€™t designed to be integrated into tc.py - can be in _any _language. My particular involvement is not necessary: I trust the GH community. I know that Perl is huge in the DFIR community and is welcome here! Any contributions should be as cross-platform capable as possible.
  
 This GitHub was created to facilitate the growth of tc.py, aid in the analysis of GPS artifacts, and help develop GPS device forensics as a whole.  
 
@@ -150,7 +150,7 @@ This GitHub was created to facilitate the growth of tc.py, aid in the analysis o
 
 **FILE SLACK**: Trackpoint data found in fileslack should not be passed through the Python script as something will break. This data is fragmented at best. If the data is valuable to you, feel free to manually add these coordinates to your finished XML file by using the proper KML elements. Usually this data is useless because - while it may contain coordinates the present GPX file does not - it usually isn't complete and fails to provide the scope necessary to understand the data.
 
-More information on manually parsing and understanding GPX files can be read on my blog, on [my GPS research page](https://forksec.wordpress.com/research-gps-device-analysis/). While far from authoritative, it'll also give some more information on what can be found in slack space.
+More information on manually parsing and understanding GPX files can be read on my blog, on [my GPS research page](http://forensicsblog.org/research-gps-device-analysis/). While far from authoritative, it'll also give some more information on what can be found in slack space.
 
 **Remaining Folders After Export** A lot of time has gone into the GPX export feature in TrackerCat. Unfortunately TC doesn't always cleanup after itself and delete empty directories remaining after a successful extraction. Further improvements will be made in future commits. 
 
@@ -162,9 +162,9 @@ Please see the section entitled _"Future Considerations"_ for another possible u
 
 For more information on how to accomplish a manual analysis of a GPS device, please see my research notes in which I conducted an in-depth analysis of a popular GPS device.
 
-[https://forksec.wordpress.com/research-gps-device-analysis/](https://forksec.wordpress.com/research-gps-device-analysis/)
+[http://forensicsblog.org/research-gps-device-analysis/](http://forensicsblog.org/research-gps-device-analysis/)
 
-The forensic analysts and technologists that work in the field have produced a number of amazing resources. I’ve added many of them as references on the bottom of my notes page.  
+The forensic analysts and technologists that work in the field have produced a number of amazing resources. Iâ€™ve added many of them as references on the bottom of my notes page.  
 
 ### Future Considerations
 
@@ -175,7 +175,7 @@ The goal of tc.py is to provide mappable output from GPS data files. That said, 
 * **Archive Grouping**.  This future consideration is one where you can take multiple files (say, GPX Archives) and convert them in a chained conversion, outputting to 1 master KML. This KML will have multiple historic Active Logs. It can use wildcards or some form of globbing.
 _Example of this type of feature:_ an investigator notes multiple Active Logs of interest within a GPS device's GPX\Archives folder. This feature would be used to create a KML with many interesting Active Logs from past trips that have been phased out of the device's Current.gpx. Data would be appended to one massive KML for mapping.
  
-* **A GUI**. Worth considering but, since the tool is rather simple in its current incarnation, this isn't a big deal if we don’t have one for a while. Things like a CSV dump could easily be plugins that are selectable from a GUI menu.
+* **A GUI**. Worth considering but, since the tool is rather simple in its current incarnation, this isn't a big deal if we donâ€™t have one for a while. Things like a CSV dump could easily be plugins that are selectable from a GUI menu.
 
 * **Image Mounting**. While exporting from a specific path is possible with the current implementation of TC, there's no form of direct image mounting and unmounting. I've been considering the use of [guestfs](http://libguestfs.org/guestfs-python.3.html) should TC need it in the future. At the moment this isn't a priority.
 
@@ -183,7 +183,7 @@ The ideas expressed above are my own, I'll gladly adopt any working attempts to 
 
 ### Google Earth Tips
 
-Part of the appeal when it comes to GPS forensics is navigating across maps and viewing GPS history in real time. So, commence the fun…
+Part of the appeal when it comes to GPS forensics is navigating across maps and viewing GPS history in real time. So, commence the funâ€¦
 
 Feel free to hit the "Play Tour" button at the bottom the Places panel (looks like a triangle). This is a minute long time waster that makes for nice eye candy during presentations.
 
@@ -191,7 +191,7 @@ Additionally, you can right click on the Tracklog Active Log entries and select 
 
 ### Choice of Project License
 
- I believe in free software and would like the chance for skilled programmers to contribute to this project. That’s the reason I’ve selected a permissive Open Source license instead of a copyleft license. Adopting a copyleft license would restrict project developers in defining that all derivative works carry the same license. Instead, I’d like to ensure that future modifications are unhindered by legal regulations. 
+ I believe in free software and would like the chance for skilled programmers to contribute to this project. Thatâ€™s the reason Iâ€™ve selected a permissive Open Source license instead of a copyleft license. Adopting a copyleft license would restrict project developers in defining that all derivative works carry the same license. Instead, Iâ€™d like to ensure that future modifications are unhindered by legal regulations. 
 
 And for the end user? Use the software in any way you see fit as long as some attribution is maintained. If you'd like to see this tool prosper into a full-fledged open source project, consider donating some code! 
 
@@ -207,6 +207,6 @@ Also a big thanks to ethompso for aiding me in fixing the tool's GPX extraction 
 
 ### Contact Project Lead
 
-If you'd like to contact me for issues any issues that aren't covered here, please use the [contact form on my blog](http://forksec.wordpress.com/contact/). 
+If you'd like to contact me for issues any issues that aren't covered here, please use the [contact form on my blog](http://forensicsblog.org/contact/). 
 
 _All animals appearing in this work are entirely fictitious. Any resemblance to real cats, living or dead is purely coincidental. All Rights Reserved. Some restrictions apply._
