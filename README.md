@@ -1,10 +1,15 @@
 ### About TrackerCat
 
-TrackerCat is an open source GPS utility that excels in working with GPX files. It's geared for forensic analysts, private sector investigators, law enforcement or military personnel to assist in conducting GPS device analysis. TC should be used in conjunction with an investigator's current forensics tools. It can also be incorporated into your own open source or closed source project.  
+TrackerCat is an open source GPS utility that excels in working with GPX files. It's geared for forensic analysts, private sector investigators, law enforcement or military personnel to assist in conducting GPS device analysis of *devices that make use of GPX files*. TC should be used in conjunction with an investigator's current forensics tools. It can also be incorporated into your own open source or closed source project.  
 
 The project's tools are 100% open source and freely available.
 
-### Use
+***TrackerCat Project*** -- refers to tools hosted on this Github that can be used for the manual examination of GPS devices.
+
+***TrackerCat tc.py Tool*** -- the Python tool hosted here that can parse GPX files found on many GPS devices. The tool does *not* support historic data stored in binary files and is only used to parse XML files within the proper context.
+
+This document primarily deals with the use, limitations and idea behind the tc.py tool. 
+### Use of tc.py
 
 **Recursive Extraction**
 
@@ -24,7 +29,9 @@ By default ALL ACTIVE LOGS are selected. These contain trackpoint data. No waypo
 
 This will export trackpoint times and coordinates from a GPX file. This can be quite cumbersome and, usually, contains well over 9,000 timestamps (depending on the GPX file and GPS device). Among many other things, trackpoint times can give you a deeper understanding as to the timeframe of data stored on the GPS device. 
 
-When run with -csv - after extracting trackpoint times - it'll also ask whether or not you want the parent Active Log info printed to their own CSV.
+Using this function, you can manually narrow down your timeframe using some excel-fu. Unlike using regular expressions (which may prove troublesome against massive XML files), TrackerCat can handle this with ease.
+
+When run with -csv - after extracting trackpoint times - it'll also ask whether or not you want the parent Active Log info printed to their own CSV. This is completely optional and may not be necessary in all cases.
 
 
 **Help & Feature Check**
