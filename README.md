@@ -1,14 +1,11 @@
 ### About TrackerCat
 
-TrackerCat is an open source GPS utility that excels in working with GPX files. It's geared for forensic analysts, private sector investigators, law enforcement or military personnel to assist in conducting GPS device analysis of *devices that make use of GPX files*. TC should be used in conjunction with an investigator's current forensics tools. It can also be incorporated into your own open source or closed source project.  
+TrackerCat is an open source GPS utility that parses GPX files on devices that use them for recording past trip activity. It's geared for forensic analysts, private sector investigators, law enforcement or military personnel to assist in conducting GPS device forensics.TC should be used in *conjunction* with an investigator's current forensics tools. It is not designed to entirely replace commercial tools. It can also be incorporated into your own open or closed source project.  
 
-The project's tools are 100% open source and freely available.
+The tool is 100% open source and freely available.
 
-***TrackerCat Project*** -- refers to tools hosted on this Github that can be used for the manual examination of GPS devices.
+***TrackerCat tc.py Tool*** -- the Python 2.7 tool hosted here can parse GPX files (XML files found on many GPS devices). The tool does *not* support historic data stored in binary files and can only be used with devices that utilize the GPX 1.1 format. That said, tc.py can dump critical timestamp and coordinate information to CSV format. The data can also be imported into major mapping tools that support KML (Keyhole Markup Language). 
 
-***TrackerCat tc.py Tool*** -- the Python tool hosted here that can parse GPX files found on many GPS devices. The tool does *not* support historic data stored in binary files and is only used to parse XML files within the proper context.
-
-This document primarily deals with the use, limitations and idea behind the tc.py tool. 
 ### Use of tc.py
 
 **Recursive Extraction**
